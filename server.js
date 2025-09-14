@@ -6,7 +6,7 @@ const productRouter = require("./Router/productRouter")
 const customerRouter = require("./Router/customerRoutes")
 const orderROuter = require("./Router/orderRouter")
 const adminROuter = require("./Router/adminRouter")
-
+const reviewRouter = require("./Router/reviewRouter")
 
 const app = express()
 const PORT = process.env.port || 5000
@@ -18,6 +18,7 @@ app.use(productRouter)
 app.use(customerRouter)
 app.use(orderROuter)
 app.use(adminROuter)
+app.use(reviewRouter)
 
 mongoose.connect(process.env.db_url)
     .then(() => console.log("MongoDB connected"))
